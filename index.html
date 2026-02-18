@@ -21,6 +21,13 @@
         }
     </style>
 
+    <style>
+        /* Hide Scrollbar */
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -119,217 +126,413 @@
         </div>
 
         <!-- lottey card -->
-        <div class="flex flex-col md:flex-row gap-3 max-w-[85%] md:max-w-[75%] mx-auto mt-5">
-            <!-- acard -->
-            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl 
-            transition duration-300 overflow-hidden
-            w-full sm:w-[300px]">
+        <div class="max-w-[90%] md:max-w-[75%] mx-auto overflow-hidden relative">
 
-                <!-- Top Image Section -->
-                <div class="relative bg-[#0a2075]">
+            <!-- Slider Wrapper -->
+            <div id="cartslider" class="flex gap-6 overflow-x-auto scroll-smooth
+            snap-x snap-mandatory
+            justify-start md:justify-center
+            px-4 mt-5">
 
-                    <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png"
-                        class="w-full h-[130px] object-cover">
 
-                    <!-- Prize -->
-                    <h3 class="absolute top-4 left-4 
-                   text-white text-2xl font-bold 
-                   bg-black/40 backdrop-blur-sm 
-                   px-3 py-1 rounded-lg">
-                        ₹10L
-                    </h3>
+                <!-- CARD -->
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
 
-                    <!-- Badge -->
-                    <img src="./images/badge.png" class="absolute bottom-3 right-3 w-14">
-                </div>
-
-                <!-- Card Content -->
-                <div class="p-5 space-y-4">
-
-                    <!-- Title -->
-                    <h5 class="text-xl font-bold text-[#0a2075] text-center">
-                        Rajshree 200
-                    </h5>
-
-                    <!-- Info Section -->
-                    <div class="flex justify-between text-sm md:text-base font-medium">
-
-                        <div class="flex flex-col gap-2 text-gray-400">
-                            <span>Draw Date</span>
-                            <span>Draw Time</span>
-                            <span>Ticket Price</span>
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹10L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
                         </div>
-
-                        <div class="flex flex-col gap-2 text-right text-gray-700">
-                            <span>18 Feb 26</span>
-                            <span>2:30 PM</span>
-                            <span class="font-semibold text-[#bb2f32]">₹10</span>
-                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 200
+                        </h5>
                     </div>
 
-                    <!-- Countdown -->
-                    <div class="bg-gradient-to-r from-[#f3f4f6] to-[#e5e7eb] 
-                    text-gray-700 text-sm font-semibold 
-                    px-4 py-2 rounded-lg text-center shadow-inner">
-                        Sale ends in <span class="text-[#bb2f32] font-bold">0d : 1h : 15m</span>
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>18 Feb 26</span>
+                                <span>2:30 PM</span>
+                                <span>₹10</span>
+                            </div>
+                        </div>
+
+                        <!-- Rounded Divider -->
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">0d:1h:15m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- Duplicate Cards -->
+                <!-- Just copy this card multiple times -->
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
                     </div>
 
-                    <!-- Divider -->
-                    <div class="border-t border-dashed"></div>
+                    <div class="px-4 py-4 flex flex-col gap-4">
 
-                    <!-- Button -->
-                    <button class="w-full bg-[#bb2f32] 
-                       hover:bg-[#992528] 
-                       text-white font-semibold 
-                       py-2.5 rounded-lg 
-                       transition duration-300 shadow-md">
-                        Buy Ticket
-                    </button>
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
 
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
                 </div>
+
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
+                    </div>
+
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
+                    </div>
+
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
+                    </div>
+
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
+                    </div>
+
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
+                    </div>
+
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="min-w-[85%] sm:min-w-[60%] md:min-w-[300px]
+                    bg-white rounded-2xl shadow-lg 
+                    hover:shadow-2xl transition duration-300 overflow-hidden">
+
+                    <div class="bg-[#d1d4d7] rounded-2xl border border-[#0a2075] p-3">
+                        <div class="bg-[#0a2075] relative rounded-xl overflow-hidden">
+                            <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png" class="w-full">
+                            <h3 class="text-white font-bold text-2xl absolute top-3 left-3">₹5L</h3>
+                            <img src="./images/badge.png" class="absolute bottom-2 right-3 w-12">
+                        </div>
+                        <h5 class="text-[#0a2075] font-bold text-center mt-3 text-lg">
+                            Rajshree 300
+                        </h5>
+                    </div>
+
+                    <div class="px-4 py-4 flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm font-semibold">
+                            <div class="text-gray-400 flex flex-col gap-2">
+                                <span>Draw Date</span>
+                                <span>Draw Time</span>
+                                <span>Ticket Price</span>
+                            </div>
+                            <div class="text-gray-700 flex flex-col gap-2 text-right">
+                                <span>20 Feb 26</span>
+                                <span>4:00 PM</span>
+                                <span>₹20</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[4px] bg-gradient-to-r 
+                            from-transparent via-gray-300 to-transparent 
+                            rounded-full">
+                        </div>
+
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg text-center text-sm">
+                            Sale ends in <span class="font-bold text-[#bb2f32]">1d:3h:20m</span>
+                        </div>
+
+                        <button class="bg-[#bb2f32] hover:bg-[#9f2629]
+                               text-white py-2 rounded-lg 
+                               font-semibold transition duration-300">
+                            Buy Ticket
+                        </button>
+
+                    </div>
+                </div>
+
             </div>
-
-             <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl 
-            transition duration-300 overflow-hidden
-            w-full sm:w-[300px]">
-
-                <!-- Top Image Section -->
-                <div class="relative bg-[#dc3545]">
-
-                    <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png"
-                        class="w-full h-[130px] object-cover">
-
-                    <!-- Prize -->
-                    <h3 class="absolute top-4 left-4 
-                   text-white text-2xl font-bold 
-                   bg-black/40 backdrop-blur-sm 
-                   px-3 py-1 rounded-lg">
-                        ₹10L
-                    </h3>
-
-                    <!-- Badge -->
-                    <img src="./images/badge.png" class="absolute bottom-3 right-3 w-14">
-                </div>
-
-                <!-- Card Content -->
-                <div class="p-5 space-y-4">
-
-                    <!-- Title -->
-                    <h5 class="text-xl font-bold text-[#0a2075] text-center">
-                        Rajshree 200
-                    </h5>
-
-                    <!-- Info Section -->
-                    <div class="flex justify-between text-sm md:text-base font-medium">
-
-                        <div class="flex flex-col gap-2 text-gray-400">
-                            <span>Draw Date</span>
-                            <span>Draw Time</span>
-                            <span>Ticket Price</span>
-                        </div>
-
-                        <div class="flex flex-col gap-2 text-right text-gray-700">
-                            <span>18 Feb 26</span>
-                            <span>2:30 PM</span>
-                            <span class="font-semibold text-[#bb2f32]">₹10</span>
-                        </div>
-                    </div>
-
-                    <!-- Countdown -->
-                    <div class="bg-gradient-to-r from-[#f3f4f6] to-[#e5e7eb] 
-                    text-gray-700 text-sm font-semibold 
-                    px-4 py-2 rounded-lg text-center shadow-inner">
-                        Sale ends in <span class="text-[#bb2f32] font-bold">0d : 1h : 15m</span>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="border-t border-dashed"></div>
-
-                    <!-- Button -->
-                    <button class="w-full bg-[#bb2f32] 
-                       hover:bg-[#992528] 
-                       text-white font-semibold 
-                       py-2.5 rounded-lg 
-                       transition duration-300 shadow-md">
-                        Buy Ticket
-                    </button>
-
-                </div>
-            </div>
-
-             <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl 
-            transition duration-300 overflow-hidden
-            w-full sm:w-[300px]">
-
-                <!-- Top Image Section -->
-                <div class="relative bg-[#0a2075]">
-
-                    <img src="./images/lottery.2ec5eb41d8f25a665fc638d27234c559.png"
-                        class="w-full h-[130px] object-cover">
-
-                    <!-- Prize -->
-                    <h3 class="absolute top-4 left-4 
-                   text-white text-2xl font-bold 
-                   bg-black/40 backdrop-blur-sm 
-                   px-3 py-1 rounded-lg">
-                        ₹10L
-                    </h3>
-
-                    <!-- Badge -->
-                    <img src="./images/badge.png" class="absolute bottom-3 right-3 w-14">
-                </div>
-
-                <!-- Card Content -->
-                <div class="p-5 space-y-4">
-
-                    <!-- Title -->
-                    <h5 class="text-xl font-bold text-[#0a2075] text-center">
-                        Rajshree 200
-                    </h5>
-
-                    <!-- Info Section -->
-                    <div class="flex justify-between text-sm md:text-base font-medium">
-
-                        <div class="flex flex-col gap-2 text-gray-400">
-                            <span>Draw Date</span>
-                            <span>Draw Time</span>
-                            <span>Ticket Price</span>
-                        </div>
-
-                        <div class="flex flex-col gap-2 text-right text-gray-700">
-                            <span>18 Feb 26</span>
-                            <span>2:30 PM</span>
-                            <span class="font-semibold text-[#bb2f32]">₹10</span>
-                        </div>
-                    </div>
-
-                    <!-- Countdown -->
-                    <div class="bg-gradient-to-r from-[#f3f4f6] to-[#e5e7eb] 
-                    text-gray-700 text-sm font-semibold 
-                    px-4 py-2 rounded-lg text-center shadow-inner">
-                        Sale ends in <span class="text-[#bb2f32] font-bold">0d : 1h : 15m</span>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="border-t border-dashed"></div>
-
-                    <!-- Button -->
-                    <button class="w-full bg-[#bb2f32] 
-                       hover:bg-[#992528] 
-                       text-white font-semibold 
-                       py-2.5 rounded-lg 
-                       transition duration-300 shadow-md">
-                        Buy Ticket
-                    </button>
-
-                </div>
-            </div>
-
         </div>
 
     </section>
-
-
 
 
     <!-- add header class -->
@@ -400,6 +603,36 @@
 
         updateSlide();
     </script>
+
+
+    <!-- card slider -->
+    <script>
+        const cartslider = document.getElementById("cartslider");
+
+        let scrollAmount = 0;
+        const cardWidth = 320; // adjust if needed
+
+        function autoSlide() {
+
+            // If reached end → reset
+            if (scrollAmount >= cartslider.scrollWidth - cartslider.clientWidth) {
+                scrollAmount = 0;
+            } else {
+                scrollAmount += cardWidth;
+            }
+
+            cartslider.scrollTo({
+                left: scrollAmount,
+                behavior: "smooth"
+            });
+        }
+
+        // Slide every 3 seconds
+        setInterval(autoSlide, 3000);
+    </script>
+
+
+</body>
 
 
 </body>
