@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div id="global-header"></div>
+
+    <!-- hero section -->
+    <section>
+        <div class="relative w-full overflow-hidden">
+
+            <!-- Slides -->
+            <div class="relative w-full overflow-hidden">
+
+                <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 px-2 md:px-0">
+                        <img src="./images/banner1.jpg"
+                            class="w-full h-[200px] md:h-[550px]  rounded-xl md:rounded-none" />
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 px-2 md:px-0">
+                        <img src="./images/banner2.jpg"
+                            class="w-full h-[200px] md:h-[550px]  rounded-xl md:rounded-none" />
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 px-2 md:px-0">
+                        <img src="./images/banner3.jpg"
+                            class="w-full h-[200px] md:h-[550px]  rounded-xl md:rounded-none" />
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="w-full flex-shrink-0 px-2 md:px-0">
+                        <img src="./images/banner4.jpg"
+                            class="w-full h-[200px] md:h-[550px]  rounded-xl md:rounded-none" />
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="w-full flex-shrink-0 px-2 md:px-0">
+                        <img src="./images/banner5.jpg"
+                            class="w-full h-[200px] md:h-[550px]  rounded-xl md:rounded-none" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Prev -->
+            <!-- <button id="prev"
+                class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white px-3 py-2 rounded-full shadow">
+                ❮
+            </button> -->
+
+            <!-- Next -->
+            <!-- <button id="next"
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white px-3 py-2 rounded-full shadow">
+                ❯
+            </button> -->
+
+            <!-- Dots -->
+            <div id="dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- add header class -->
+    <script>
+        fetch('./includes/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('global-header').innerHTML = html;
+            });
+    </script>
+
+    <!-- slider -->
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.children;
+        const totalSlides = slides.length;
+        const dotsContainer = document.getElementById('dots');
+
+        let index = 0;
+
+        // Create Dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = "w-3 h-3 rounded-full bg-white/60 cursor-pointer transition duration-300";
+            dot.addEventListener('click', () => {
+                index = i;
+                updateSlide();
+            });
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = dotsContainer.children;
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('bg-[#bb2f32]', 'scale-125');
+                dots[i].classList.add('bg-white/60');
+            }
+
+            dots[index].classList.remove('bg-white/60');
+            dots[index].classList.add('bg-[#bb2f32]', 'scale-125');
+        }
+
+        // Auto Slide
+        setInterval(() => {
+            index = (index + 1) % totalSlides;
+            updateSlide();
+        }, 4000);
+
+        // Swipe Support
+        let startX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+                index = (index + 1) % totalSlides;
+            } else if (endX - startX > 50) {
+                index = (index - 1 + totalSlides) % totalSlides;
+            }
+            updateSlide();
+        });
+
+        updateSlide();
+    </script>
+
+
+</body>
+
+</html>
